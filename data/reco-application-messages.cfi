@@ -1,0 +1,168 @@
+# $Id$
+#
+# Copied from RecoTracker/RoadSearchCloudMaker/test
+#
+
+# MessageLogger parameters
+# write out info level to cout and cerr
+# additionally, write out debug to log file
+
+service = MessageLogger 
+{
+  vstring destinations = 
+  { 
+    "log",
+    "cout"
+  }
+
+  vstring categories =
+  {
+    "DDLParser",
+    "FwkJob",
+    "StableSort",
+    "CaloSimInfo",
+    "HitBuildInfo",
+    "GeometryInfo",
+    "EcalSimInfo",
+    "EcalSImInfo",
+    "TrackerSimInfo",
+    "TrackerSimDebug",
+    "TrackerMapDDDtoID",
+    "TrackerSimInfoNumbering",
+    "TrackerSimDebugNumbering",
+    "TrackRenumberingInfo",
+    "SiStripRecHitConverter",
+    "RoadSearch",
+    "RecoTracker/TrackProducer",
+    "TrackingTools/TrackFitters"
+  }
+
+  vstring debugModules = 
+  { 
+    "*" 
+  }
+
+  PSet log = 
+  { 
+    string threshold = "INFO" 
+    bool noLineBreaks = true
+    PSet DDLParser  =
+    {
+      int32 limit = 0
+    }
+    PSet FwkJob =
+    {
+      int32 limit = 0
+    }
+    PSet StableSort =
+    {
+      int32 limit = 0
+    }
+    PSet CaloSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet HitBuildInfo =
+    {
+      int32 limit = 0
+    }
+    PSet GeometryInfo =
+    {
+      int32 limit = 0
+    }
+    PSet EcalSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet EcalSImInfo =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimDebug =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerMapDDDtoID =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimInfoNumbering =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimDebugNumbering =
+    {
+      int32 limit = 0
+    }
+    PSet TrackRenumberingInfo =
+    {
+      int32 limit = 0
+    }
+  }
+  
+  PSet cout = 
+  { 
+    string threshold = "INFO"
+    bool noLineBreaks = true
+    PSet DDLParser  =
+    {
+      int32 limit = 0
+    }
+    PSet FwkJob =
+    {
+      int32 limit = 0
+    }
+    PSet StableSort =
+    {
+      int32 limit = 0
+    }
+    PSet CaloSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet HitBuildInfo =
+    {
+      int32 limit = 0
+    }
+    PSet GeometryInfo =
+    {
+      int32 limit = 0
+    }
+    PSet EcalSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet EcalSImInfo =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimInfo =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimDebug =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerMapDDDtoID =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimInfoNumbering =
+    {
+      int32 limit = 0
+    }
+    PSet TrackerSimDebugNumbering =
+    {
+      int32 limit = 0
+    }
+    PSet TrackRenumberingInfo =
+    {
+      int32 limit = 0
+    }
+  } 
+}
