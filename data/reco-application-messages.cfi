@@ -1,4 +1,4 @@
-# $Id$
+# $Id: reco-application-messages.cfi,v 1.1 2100010006/10004/18 16:46:16 argiro Exp $
 #
 # Copied from RecoTracker/RoadSearchCloudMaker/test
 #
@@ -48,11 +48,11 @@ service = MessageLogger
     bool noLineBreaks = true
     PSet DDLParser  =
     {
-      int32 limit = 0
+      int32 limit = 1000
     }
     PSet FwkJob =
     {
-      int32 limit = 0
+      int32 limit = 1000
     }
     PSet StableSort =
     {
