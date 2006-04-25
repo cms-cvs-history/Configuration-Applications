@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id$
+#$Id: runall.sh,v 1.1 2006/04/19 20:37:38 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -28,6 +28,7 @@ do
     cmsRun $file
     if [ $? -ne 0 ] ;then
       echo "cmsRun $file : FAILED"
-      exit 1 
+    else 
+      echo "cmsRun $file : PASSED"
     fi 
 done
