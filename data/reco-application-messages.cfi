@@ -1,24 +1,17 @@
-# $Id: reco-application-messages.cfi,v 1.1 2100010006/10004/18 16:46:16 argiro Exp $
-#
-# Copied from RecoTracker/RoadSearchCloudMaker/test
-#
-
 # MessageLogger parameters
-# write out info level to cout and cerr
-# additionally, write out debug to log file
+# write out info level to cout
 
 service = MessageLogger 
 {
   vstring destinations = 
   { 
-    "log",
     "cout"
   }
 
   vstring categories =
   {
-    "DDLParser",
     "FwkJob",
+    "DDLParser",
     "StableSort",
     "CaloSimInfo",
     "HitBuildInfo",
@@ -33,26 +26,21 @@ service = MessageLogger
     "TrackRenumberingInfo",
     "SiStripRecHitConverter",
     "RoadSearch",
-    "RecoTracker/TrackProducer",
-    "TrackingTools/TrackFitters"
+    "TrackProducer",
+    "TrackFitters"
   }
 
-  vstring debugModules = 
-  { 
-    "*" 
-  }
-
-  PSet log = 
+  PSet cout = 
   { 
     string threshold = "INFO" 
     bool noLineBreaks = true
+    PSet FwkJob  =
+    {
+      int32 limit = 0
+    }
     PSet DDLParser  =
     {
-      int32 limit = 1000
-    }
-    PSet FwkJob =
-    {
-      int32 limit = 1000
+      int32 limit = 0
     }
     PSet StableSort =
     {
@@ -104,65 +92,21 @@ service = MessageLogger
     }
   }
   
-  PSet cout = 
-  { 
-    string threshold = "INFO"
-    bool noLineBreaks = true
-    PSet DDLParser  =
-    {
-      int32 limit = 0
+  untracked vstring fwkJobReports = 
+  {
+    "FrameworkJobReport.xml"
+  }
+  
+  PSet FrameworkJobReport.xml = 
+  {
+    PSet default = 
+    { 
+      int32 limit = 0 
     }
-    PSet FwkJob =
-    {
-      int32 limit = 0
+    PSet FwkJob = 
+    { 
+      int32 limit = 10000000 
     }
-    PSet StableSort =
-    {
-      int32 limit = 0
-    }
-    PSet CaloSimInfo =
-    {
-      int32 limit = 0
-    }
-    PSet HitBuildInfo =
-    {
-      int32 limit = 0
-    }
-    PSet GeometryInfo =
-    {
-      int32 limit = 0
-    }
-    PSet EcalSimInfo =
-    {
-      int32 limit = 0
-    }
-    PSet EcalSImInfo =
-    {
-      int32 limit = 0
-    }
-    PSet TrackerSimInfo =
-    {
-      int32 limit = 0
-    }
-    PSet TrackerSimDebug =
-    {
-      int32 limit = 0
-    }
-    PSet TrackerMapDDDtoID =
-    {
-      int32 limit = 0
-    }
-    PSet TrackerSimInfoNumbering =
-    {
-      int32 limit = 0
-    }
-    PSet TrackerSimDebugNumbering =
-    {
-      int32 limit = 0
-    }
-    PSet TrackRenumberingInfo =
-    {
-      int32 limit = 0
-    }
-  } 
+  }
+
 }
