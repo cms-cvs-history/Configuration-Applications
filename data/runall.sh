@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.3 2006/05/01 14:04:59 tboccali Exp $
+#$Id: runall.sh,v 1.4 2006/05/01 22:03:29 gutsche Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -34,7 +34,7 @@ testsSim="sim-application.cfg
 sim-application-digitization.cfg
 "
 
-tests=`echo $testsKF $othertests testsSim`
+tests=`echo $testsKF $testsRS $testsSim`
 
 echo "Tests to be run : " $tests
 
