@@ -1,22 +1,22 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.2 2006/04/25 10:28:19 argiro Exp $
+#$Id: runall.sh,v 1.3 2006/05/01 14:04:59 tboccali Exp $
 #
 #Dummy script to run all integration tests
 #
 #
 
-testsRS="reco-application-sim_10mum.cfg
-reco-application-digitize_strips_from_flatptgun.cfg
-reco-application-DigisToClusters.cfg
-reco-application-ClustersToHits.cfg
-reco-application-HitsToSeeds.cfg
-reco-application-SeedsToClouds.cfg
-reco-application-CloudsToClean.cfg
-reco-application-CleanToTrackCandidates.cfg
-reco-application-TrackCandidatesToTracks.cfg
-reco-application-AnalyzeTracks.cfg
+testsRS="reco-application-RS-sim_10mum.cfg
+reco-application-RS-digitize_strips_from_flatptgun.cfg
+reco-application-RS-DigisToClusters.cfg
+reco-application-RS-ClustersToHits.cfg
+reco-application-RS-HitsToSeeds.cfg
+reco-application-RS-SeedsToClouds.cfg
+reco-application-RS-CloudsToClean.cfg
+reco-application-RS-CleanToTrackCandidates.cfg
+reco-application-RS-TrackCandidatesToTracks.cfg
+reco-application-RS-AnalyzeTracks.cfg
 "
 
 
