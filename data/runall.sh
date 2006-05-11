@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.4 2006/05/01 22:03:29 gutsche Exp $
+#$Id: runall.sh,v 1.5 2006/05/01 22:53:50 gutsche Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -36,6 +36,8 @@ sim-application-digitization.cfg
 
 tests=`echo $testsKF $testsRS $testsSim`
 
+report=""
+
 echo "Tests to be run : " $tests
 
 eval `scramv1 runtime -sh`
@@ -46,7 +48,13 @@ do
     cmsRun $file
     if [ $? -ne 0 ] ;then
       echo "cmsRun $file : FAILED"
+      report="$report \n cmsRun $file : FAILED" 
     else 
       echo "cmsRun $file : PASSED"
+      report="$report \n cmsRun $file : PASSED"
     fi 
 done
+
+
+echo -e "$report" 
+echo -e "$report" >! runall-report.log
