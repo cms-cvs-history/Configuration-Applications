@@ -1,40 +1,33 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.4 2006/05/01 22:03:29 gutsche Exp $
+#$Id: runall.sh,v 1.5 2006/05/01 22:53:50 gutsche Exp $
 #
 #Dummy script to run all integration tests
 #
 #
 
-testsRS="reco-application-RS-sim_10mum.cfg
-reco-application-RS-digitize_strips_from_flatptgun.cfg
-reco-application-RS-DigisToClusters.cfg
-reco-application-RS-ClustersToHits.cfg
-reco-application-RS-HitsToSeeds.cfg
-reco-application-RS-SeedsToClouds.cfg
-reco-application-RS-CloudsToClean.cfg
-reco-application-RS-CleanToTrackCandidates.cfg
-reco-application-RS-TrackCandidatesToTracks.cfg
-reco-application-RS-AnalyzeTracks.cfg
+testsTracking="reco-application-tracking-simulation.cfg
+reco-application-tracking-digitization.cfg
+reco-application-tracking-clusterization.cfg
+reco-application-tracking-rechitconversion.cfg
+reco-application-tracking-seedfinding-globalpixel.cfg
+reco-application-tracking-seedfinding-roadsearch.cfg
+reco-application-tracking-patternrecognition-kftrackcandidatemaker.cfg
+reco-application-tracking-patternrecognition-rscloudmaker.cfg
+reco-application-tracking-patternrecognition-rscloudcleaner.cfg
+reco-application-tracking-patternrecognition-rstrackcandidatemaker.cfg
+reco-application-tracking-finaltrackfits-ctffinalfitanalytical.cfg
+reco-application-tracking-finaltrackfits-ctffinalfitwithmaterial.cfg
+reco-application-tracking-finaltrackfits-rsfinalfitanalytical.cfg
+reco-application-tracking-finaltrackfits-rsfinalfitwithmaterial.cfg
 "
-
-
-testsKF="reco-application-KF-generation.cfg
-reco-application-KF-digitization.cfg
-reco-application-KF-rechits.cfg
-reco-application-KF-seeds.cfg
-reco-application-KF-trajectorybuilding.cfg
-reco-application-KF-finalfit.cfg
-reco-application-KF-readtracks.cfg
-"
-
 
 testsSim="sim-application.cfg
 sim-application-digitization.cfg
 "
 
-tests=`echo $testsKF $testsRS $testsSim`
+tests=`echo $testsTracking $testsSim`
 
 echo "Tests to be run : " $tests
 
