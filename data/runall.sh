@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.7 2006/05/25 22:53:40 gutsche Exp $
+#$Id: runall.sh,v 1.8 2006/06/06 15:56:50 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -27,7 +27,9 @@ testsSim="sim-application.cfg
 sim-application-digitization.cfg
 "
 
-testsMuon="recolocal-application-dtrechits.cfg"
+testsMuon="recolocal-application-dtrechits.cfg
+recolocal-application-cscchain.cfg
+"
 
 tests=`echo $testsTracking $testsSim $testsMuon`
 
