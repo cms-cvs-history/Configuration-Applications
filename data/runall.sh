@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.9 2006/06/07 13:42:56 argiro Exp $
+#$Id: runall.sh,v 1.10 2006/06/07 22:18:54 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -45,6 +45,9 @@ tests=`echo $testsTracking $testsSim $testsMuon $testVertex $testEcal $testHcal`
 
 report=""
 
+let nfail=0
+let npass=0
+
 echo "Tests to be run : " $tests
 
 eval `scramv1 runtime -sh`
@@ -55,13 +58,17 @@ do
     cmsRun $file
     if [ $? -ne 0 ] ;then
       echo "cmsRun $file : FAILED"
-      report="$report \n cmsRun $file : FAILED" 
+      report="$report \n cmsRun $file : FAILED"
+      let nfail+=1
     else 
       echo "cmsRun $file : PASSED"
       report="$report \n cmsRun $file : PASSED"
+      let npass+=1
     fi 
 done
 
+
+report="$report \n \n $npass tests passed, $nfail failed"
 
 echo -e "$report" 
 rm -f runall-report.log
