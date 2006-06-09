@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.10 2006/06/07 22:18:54 argiro Exp $
+#$Id: runall.sh,v 1.11 2006/06/08 14:44:08 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -68,7 +68,7 @@ do
 done
 
 
-report="$report \n \n $npass tests passed, $nfail failed"
+report="$report \n \n $npass tests passed, $nfail failed \n"
 
 echo -e "$report" 
 rm -f runall-report.log
