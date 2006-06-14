@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.12 2006/06/09 09:22:41 argiro Exp $
+#$Id: runall.sh,v 1.13 2006/06/12 15:59:13 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -40,7 +40,7 @@ reco-application-ecal-localreco.cfg
 reco-application-ecal-egammaclusters.cfg
 "
 
-testHcal="Zprime_Dijets_2000_JetMETSimReco.cfg"
+testHcal="Zprime_Dijets_700_JetMETintegration.cfg"
 
 tests=`echo $testsTracking $testsSim $testsMuon $testVertex $testEcal $testHcal`
 
