@@ -2,7 +2,7 @@
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
   #calibrations
-# defined in digitization step  es_source = EcalTrivialConditionRetriever {}
+  es_source = EcalTrivialConditionRetriever {}
   include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
 
   # ECAL reconstruction
