@@ -1,0 +1,18 @@
+  include "SimGeneral/HepPDTESSource/data/pdt.cfi"
+  module genCandidates = HepMCCandidateProducer {
+      string src = "source"
+      untracked bool verbose = true
+      bool stableOnly = true
+      vstring excludeList = { }
+  }
+
+  include "RecoJets/JetProducers/data/GenJetKt.cfi"
+  include "RecoJets/JetProducers/data/GenJetMcone5.cfi"
+  include "RecoJets/JetProducers/data/GenJetMcone7.cfi"
+  include "RecoJets/JetProducers/data/GenJetIcone5.cfi"
+  module genMet =  METProducer {
+    string src = "genCandidates"
+  }
+
+  sequence caloJetMetGen = { genCandidates & GenJetKt & GenJetMcone5 & GenJetMcone7 & GenJetIcone5 & genMet }
+

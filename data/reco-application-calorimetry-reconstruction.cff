@@ -1,0 +1,21 @@
+  # calo geometry
+  include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
+
+  #calibrations
+# defined in digitization step  es_source = EcalTrivialConditionRetriever {}
+  include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
+
+  # ECAL reconstruction
+  include "RecoLocalCalo/EcalRecProducers/data/EcalWeightUncalibratedRecHitProducer.cfi"
+  include "RecoLocalCalo/EcalRecProducers/data/EcalRecHitProducer.cfi"
+  include "RecoLocalCalo/EcalRecProducers/data/ESRecHitProducer.cfi"
+
+  #HCAL reconstruction
+  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hbhe.cfi"
+  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-ho.cfi"
+  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hf.cfi"
+  replace hfreco.firstSample = 3
+  replace hfreco.samplesToAdd = 1
+  replace hfreco.correctForTimeslew = false
+                                                 
+  sequence caloReco = { ecaluncalibrechit & ecalrechit & esrechit & hbhereco & hfreco & horeco }
