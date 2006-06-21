@@ -12,17 +12,17 @@
   es_module = HcalTopologyIdealEP {}
  
   include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
-  replace calotowermaker.hbheInput = "hbhereco"
-  replace calotowermaker.hoInput = "horeco"
-  replace calotowermaker.hfInput = "hfreco"
-  replace calotowermaker.AllowMissingInputs = false
-  replace calotowermaker.ecalInputs = {"ecalrechit/EcalRecHitsEB"}
+  replace towermaker.hbheInput = "hbhereco"
+  replace towermaker.hoInput = "horeco"
+  replace towermaker.hfInput = "hfreco"
+  replace towermaker.AllowMissingInputs = false
+  replace towermaker.ecalInputs = {"ecalrechit/EcalRecHitsEB"}
 
 #  include "RecoLocalCalo/CaloTowersCreator/data/calocandidatemaker.cfi"
  module caloTowers = CaloTowerCandidateCreator {
-          string src = 'calotowermaker'
+          string src = 'towermaker'
           double minimumEt = -1
           double minimumE = -1
   }
  
-  sequence caloTowersRec = { calotowermaker, caloTowers }
+  sequence caloTowersRec = { towermaker, caloTowers }
