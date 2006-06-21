@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.13 2006/06/12 15:59:13 argiro Exp $
+#$Id: runall.sh,v 1.14 2006/06/14 21:07:43 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -32,7 +32,7 @@ recolocal-application-cscchain.cfg
 reco-application-rpcrechits.cfg
 "
 
-testVertex="reco-application-primaryvertexfinding.cfg"
+testVertex="reco-application-primaryvertexfinding.cfg sim_rec_10muons_1-10GeV.cfg"
 
 testEcal="reco-application-ecal-simulation.cfg
 reco-application-ecal-digitization.cfg
