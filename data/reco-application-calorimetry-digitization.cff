@@ -13,7 +13,8 @@
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
   # ECAL calibrations 
-  es_source = EcalTrivialConditionRetriever { }
+  #es_source = EcalTrivialConditionRetriever { }
+  include "CalibCalorimetry/EcalTrivialCondModules/data/EcalTrivialCondRetriever.cfi"
 
   # HCAL calibrations
   include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
