@@ -12,11 +12,6 @@
   es_module = HcalTopologyIdealEP {}
  
   include "RecoJets/JetProducers/data/CaloTowerSchemeB.cfi"
-  replace towermaker.hbheInput = "hbhereco"
-  replace towermaker.hoInput = "horeco"
-  replace towermaker.hfInput = "hfreco"
-  replace towermaker.AllowMissingInputs = false
-  replace towermaker.ecalInputs = {"ecalrechit/EcalRecHitsEB"}
 
 #  include "RecoLocalCalo/CaloTowersCreator/data/calocandidatemaker.cfi"
  module caloTowers = CaloTowerCandidateCreator {
