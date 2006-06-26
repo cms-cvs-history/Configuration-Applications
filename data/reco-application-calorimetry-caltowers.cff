@@ -16,7 +16,6 @@
   replace towermaker.hoInput = "horeco"
   replace towermaker.hfInput = "hfreco"
   replace towermaker.AllowMissingInputs = false
-  replace towermaker.ecalInputs = {"ecalrechit/EcalRecHitsEB"}
 
 #  include "RecoLocalCalo/CaloTowersCreator/data/calocandidatemaker.cfi"
  module caloTowers = CaloTowerCandidateCreator {
