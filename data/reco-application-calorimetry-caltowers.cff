@@ -15,9 +15,9 @@
 
 #  include "RecoLocalCalo/CaloTowersCreator/data/calocandidatemaker.cfi"
  module caloTowers = CaloTowerCandidateCreator {
-          string src = 'towermaker'
+          string src = 'towerMaker'
           double minimumEt = -1
           double minimumE = -1
   }
  
-  sequence caloTowersRec = { towermaker, caloTowers }
+  sequence caloTowersRec = { towerMaker, caloTowers }

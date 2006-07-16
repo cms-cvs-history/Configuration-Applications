@@ -7,23 +7,19 @@
   include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
 
   # CMS Geometry
-  include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
+   include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
 
   # Calo geometry service model
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
-  # ECAL calibrations 
-  #es_source = EcalTrivialConditionRetriever { }
-  include "CalibCalorimetry/EcalTrivialCondModules/data/EcalTrivialCondRetriever.cfi"
-
   # HCAL calibrations
   include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
-
-  #Full digitization (EB+EE+ES)
-  include "SimCalorimetry/EcalSimProducers/data/ecaldigi.cfi"
 
   # hcal digitization
   include "SimCalorimetry/HcalSimProducers/data/hcaldigi.cfi"
                                                  
-  sequence caloDigi = { mix, ecaldigi & hcaldigi }
+  # full ECAL digitization
+  include "SimCalorimetry/EcalSimProducers/data/ecalDigiSequence.cff"
+
+  sequence caloDigi = { mix, ecalDigiSequence & hcaldigi }
 

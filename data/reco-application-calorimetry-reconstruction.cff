@@ -1,19 +1,16 @@
   # calo geometry
   include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
 
-  #calibrations
-  #es_source = EcalTrivialConditionRetriever {}
-  include "CalibCalorimetry/EcalTrivialCondModules/data/EcalTrivialCondRetriever.cfi"
+  # HCAL calibrations
   include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
-
-  # ECAL reconstruction
-  include "RecoLocalCalo/EcalRecProducers/data/EcalWeightUncalibratedRecHitProducer.cfi"
-  include "RecoLocalCalo/EcalRecProducers/data/EcalRecHitProducer.cfi"
-  include "RecoLocalCalo/EcalRecProducers/data/ESRecHitProducer.cfi"
 
   #HCAL reconstruction
   include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hbhe.cfi"
   include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-ho.cfi"
   include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hf.cfi"
+
+  # ECAL reconstruction
+  include "RecoLocalCalo/EcalRecProducers/data/ecalLocalRecoSequence.cff"
+
                                                  
-  sequence caloReco = { ecaluncalibrechit & ecalrechit & esrechit & hbhereco & hfreco & horeco }
+  sequence caloReco = { ecalLocalRecoSequence & hbhereco & hfreco & horeco }
