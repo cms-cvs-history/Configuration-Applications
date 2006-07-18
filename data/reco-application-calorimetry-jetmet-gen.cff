@@ -12,6 +12,7 @@
   include "RecoJets/JetProducers/data/GenJetIcone5.cfi"
   module genMet =  METProducer {
     string src = "genCandidates"
+    string METType = "boh"
   }
 
   sequence caloJetMetGen = { genCandidates & GenJetKt & GenJetMcone5 & GenJetMcone7 & GenJetIcone5 & genMet }
