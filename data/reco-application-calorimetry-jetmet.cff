@@ -7,4 +7,12 @@
     string METType = "CaloMET"
   }
 
-  sequence caloJetMet = { CaloJetKt & CaloJetMcone5 & CaloJetMcone7 & CaloJetIcone5 & Met}
+module BasicJetIcone5 = IterativeConeJetProducer {
+       using IconeJetParameters
+       double towerThreshold = 0.5       
+       double coneRadius = 0.5
+       string src = "caloTowers"
+       untracked string jetType = "BasicJet"
+}
+
+  sequence caloJetMet = { CaloJetKt & CaloJetMcone5 & CaloJetMcone7 & CaloJetIcone5 & BasicJetIcone5 & Met}
