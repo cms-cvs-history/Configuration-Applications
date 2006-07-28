@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.17 2006/07/17 22:45:49 tboccali Exp $
+#$Id: runall.sh,v 1.18 2006/07/18 08:46:53 tboccali Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -21,6 +21,7 @@ reco-application-tracking-finaltrackfits-ctffinalfitanalytical.cfg
 reco-application-tracking-finaltrackfits-ctffinalfitwithmaterial.cfg
 reco-application-tracking-finaltrackfits-rsfinalfitanalytical.cfg
 reco-application-tracking-finaltrackfits-rsfinalfitwithmaterial.cfg
+TrackValidator.cfg
 "
 
 testsSim="sim-application.cfg
