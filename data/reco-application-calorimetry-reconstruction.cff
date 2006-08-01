@@ -1,16 +1,2 @@
-  # calo geometry
-  include "Geometry/CaloEventSetup/data/CaloGeometry.cfi"
-
-  # HCAL calibrations
-  include "CalibCalorimetry/HcalPlugins/data/hardwired_conditions.cfi"
-
-  #HCAL reconstruction
-  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hbhe.cfi"
-  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-ho.cfi"
-  include "RecoLocalCalo/HcalRecProducers/data/HcalSimpleReconstructor-hf.cfi"
-
-  # ECAL reconstruction
-  include "RecoLocalCalo/EcalRecProducers/data/ecalLocalRecoSequence.cff"
-
-                                                 
-  sequence caloReco = { ecalLocalRecoSequence & hbhereco & hfreco & horeco }
+# backward compatibility
+  include "Configuration/JetMET/data/calorimetry-reconstruction.cff"

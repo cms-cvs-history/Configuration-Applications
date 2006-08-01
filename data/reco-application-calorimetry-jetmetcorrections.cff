@@ -1,3 +1,2 @@
-  include "JetMETCorrections/MCJet/data/JetCorrections.cff"
-
-  sequence caloJetMetCorrections = { JetCorrections }
+# backward compatibility
+  include "Configuration/JetMET/data/calorimetry-jetmetcorrections.cff"

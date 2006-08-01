@@ -1,18 +1,2 @@
-  include "RecoJets/JetProducers/data/CaloJetKt.cfi"
-  include "RecoJets/JetProducers/data/CaloJetMcone5.cfi"
-  include "RecoJets/JetProducers/data/CaloJetMcone7.cfi"
-  include "RecoJets/JetProducers/data/CaloJetIcone5.cfi"
-  module met =  METProducer {
-    string src = "caloTowers"
-    string METType = "CaloMET"
-  }
-
-module iterativeCone5BasicJets = IterativeConeJetProducer {
-       using IconeJetParameters
-       double towerThreshold = 0.5       
-       double coneRadius = 0.5
-       string src = "caloTowers"
-       untracked string jetType = "BasicJet"
-}
-
-  sequence caloJetMet = { ktCaloJets & midPointCone5CaloJets & midPointCone7CaloJets & iterativeCone5CaloJets & iterativeCone5BasicJets & met}
+# backward compatibility
+  include "Configuration/JetMET/data/calorimetry-jetmet.cff"

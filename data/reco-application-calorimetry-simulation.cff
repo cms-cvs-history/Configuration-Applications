@@ -1,11 +1,2 @@
-  # initialize magnetic field
-  include "MagneticField/Engine/data/volumeBasedMagneticField.cfi"
-
-  # CMS Geometry
-  include "Geometry/CMSCommonData/data/cmsIdealGeometryXML.cfi"
-  include "Geometry/TrackerNumberingBuilder/data/trackerNumberingGeometry.cfi"
-
-  # include geant4 simulation
-  include "SimG4Core/Application/data/SimG4Object.cfi"
-
-  sequence simulation = { g4SimHits }
+# backward compatibility
+  include "Configuration/JetMET/data/calorimetry-simulation.cff"
