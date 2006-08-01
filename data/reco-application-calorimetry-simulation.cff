@@ -8,4 +8,4 @@
   # include geant4 simulation
   include "SimG4Core/Application/data/SimG4Object.cfi"
 
-  sequence simulation = { SimG4Object }
+  sequence simulation = { g4SimHits }

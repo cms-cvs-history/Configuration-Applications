@@ -15,5 +15,5 @@
     string METType = "boh"
   }
 
-  sequence caloJetMetGen = { genCandidates & GenJetKt & GenJetMcone5 & GenJetMcone7 & GenJetIcone5 & genMet }
+  sequence caloJetMetGen = { genCandidates & ktGenJets & midPointCone5GenJets & midPointCone7GenJets & iterativeCone5GenJets & genMet }
 
