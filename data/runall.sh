@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.18 2006/07/18 08:46:53 tboccali Exp $
+#$Id: runall.sh,v 1.19 2006/07/28 07:45:30 tboccali Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -33,7 +33,9 @@ recolocal-application-cscchain.cfg
 reco-application-rpcrechits.cfg
 "
 
-testVertex="reco-application-primaryvertexfinding.cfg sim_rec_10muons_1-10GeV.cfg"
+testVertex="reco-application-primaryvertexfinding.cfg 
+sim_rec_10muons_1-10GeV.cfg 
+VertexRead.cfg"
 
 testEcal="reco-application-ecal-simulation.cfg
 reco-application-ecal-digitization.cfg
