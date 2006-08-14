@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.19 2006/07/28 07:45:30 tboccali Exp $
+#$Id: runall.sh,v 1.20 2006/08/04 08:44:20 vanlaer Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -59,14 +59,19 @@ eval `scramv1 runtime -sh`
 for file in $tests 
 do
     echo Preparing to run $file
+    let starttime=`date "+%s"`
     cmsRun $file
+
+    let endtime=`date "+%s"`
+    let tottime=$endtime-$starttime;   
+
     if [ $? -ne 0 ] ;then
-      echo "cmsRun $file : FAILED"
-      report="$report \n cmsRun $file : FAILED"
+      echo "cmsRun $file : FAILED - time: $tottime s"
+      report="$report \n cmsRun $file : FAILED  - time: $tottime s"
       let nfail+=1
     else 
-      echo "cmsRun $file : PASSED"
-      report="$report \n cmsRun $file : PASSED"
+      echo "cmsRun $file : PASSED - time: $tottime s"
+      report="$report \n cmsRun $file : PASSED  - time: $tottime s"
       let npass+=1
     fi 
 done
