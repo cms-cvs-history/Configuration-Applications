@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.21 2006/08/14 16:12:04 argiro Exp $
+#$Id: runall.sh,v 1.22 2006/08/22 08:49:08 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -61,13 +61,14 @@ do
     echo Preparing to run $file
     let starttime=`date "+%s"`
     cmsRun $file
+    let exitcode=$?
 
     let endtime=`date "+%s"`
     let tottime=$endtime-$starttime;   
 
-    if [ $? -ne 0 ] ;then
-      echo "cmsRun $file : FAILED - time: $tottime s"
-      report="$report \n cmsRun $file : FAILED  - time: $tottime s"
+    if [ $exitcode -ne 0 ] ;then
+      echo "cmsRun $file : FAILED - time: $tottime s - exit: $exitcode"
+      report="$report \n cmsRun $file : FAILED  - time: $tottime s - exit: $exitcode"
       let nfail+=1
     else 
       echo "cmsRun $file : PASSED - time: $tottime s"
