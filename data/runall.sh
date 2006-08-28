@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-#$Id: runall.sh,v 1.22 2006/08/22 08:49:08 argiro Exp $
+#$Id: runall.sh,v 1.23 2006/08/23 08:50:27 argiro Exp $
 #
 #Dummy script to run all integration tests
 #
@@ -11,15 +11,13 @@ testsTracking="reco-application-tracking-simulation.cfg
 reco-application-tracking-digitization.cfg
 reco-application-tracking-clusterization.cfg
 reco-application-tracking-rechitconversion.cfg
-reco-application-tracking-seedfinding-globalpixel.cfg
+reco-application-tracking-seedfinding-globalmixed.cfg
 reco-application-tracking-seedfinding-roadsearch.cfg
 reco-application-tracking-patternrecognition-kftrackcandidatemaker.cfg
 reco-application-tracking-patternrecognition-rscloudmaker.cfg
 reco-application-tracking-patternrecognition-rscloudcleaner.cfg
 reco-application-tracking-patternrecognition-rstrackcandidatemaker.cfg
-reco-application-tracking-finaltrackfits-ctffinalfitanalytical.cfg
 reco-application-tracking-finaltrackfits-ctffinalfitwithmaterial.cfg
-reco-application-tracking-finaltrackfits-rsfinalfitanalytical.cfg
 reco-application-tracking-finaltrackfits-rsfinalfitwithmaterial.cfg
 TrackValidator.cfg
 "
