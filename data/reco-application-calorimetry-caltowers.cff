@@ -1,2 +1,0 @@
-# backward compatibility
-  include "Configuration/JetMET/data/calorimetry-caltowers.cff"
